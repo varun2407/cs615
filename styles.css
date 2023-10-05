@@ -18,7 +18,7 @@ body, html {
 
 .bg-image {
   /* The image used */
-  background-image: url("/assets/design.jpg");
+  background-image: url("https://cdn.mos.cms.futurecdn.net/6bxva8DmZvNj8kaVrQZZMP.jpg");
 
   /* Add the blur effect */
   filter: blur(4px);
