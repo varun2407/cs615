@@ -51,3 +51,13 @@ body, html {
 }
 
 
+.responsive-image {
+  width: 50%; /* Both images will take up 50% of the container's width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure images don't exceed their original size */
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
+}
