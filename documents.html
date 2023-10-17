@@ -39,18 +39,15 @@
   </nav>
   <div class="bg-image"></div>
   <div class="bg-text">
-    <table class="table table-dark">
-      <thead class="col">
-    <label for="pdfSelect">Select PDF: </label>
-    <select id="pdfSelect" onchange="changePDF()">
-      <option value="1">Project Proposal</option>
-      <option value="2">User Analysis</option>
-      <option value="3">Storyboarding</option>
-    </select>
-  </thead>
-  <tr>
-    <iframe id="pdfFrame" width="800" height="500"></iframe>
-  </tr>
+    <h5><label for="pdfSelect">Select PDF: </label>
+        <select id="pdfSelect" onchange="changePDF()">
+          <option value="1">Project Proposal</option>
+          <option value="2">User Analysis</option>
+          <option value="3">Storyboarding</option>
+        </select></h5>
+
+    <iframe id="pdfFrame" width="600" height="500"></iframe>
+
     <script type="text/javascript">
       function changePDF() {
         const iframe = document.getElementById('pdfFrame');
@@ -78,7 +75,6 @@
       // Initially load the first PDF
       changePDF();
     </script>
-    </table>
   </div>
 </body>
 </html>
