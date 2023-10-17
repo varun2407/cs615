@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <head>
+  <style>
+    .sub-table{
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+    }
+  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.10.377/build/pdf.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <title>Documents</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,6 +29,9 @@
         <li class="nav-item active">
           <a class="nav-link" href="documents.html">Documents</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="downloads.html">Downloads</a>
+        </li>
         <li class="nav-item" style="align-items: right;">
           <a class="nav-link" href="about_us.html">About us</a>
         </li>
@@ -27,48 +40,46 @@
   <div class="bg-image"></div>
   <div class="bg-text">
     <table class="table table-dark">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Upload Date</th>
-          <th scope="col">Download</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="col"><a href="assets/Project Proposal.pdf" target="_blank">Proposal</a><br></th>
-          <th scope="col">09/22/23</th>
-          <th><a href="assets/Project Proposal.pdf" download="Group 2 Proposal">Download PDF</a></th>
-        </tr>
-        <tr>
-          <th scope="col"><a href="assets/UserAnalysis.pdf" target="_blank">User & Task & Domain Analysis</a></th>
-          <th scope="col">10/09/23</th>
-          <th scope="col"><a href="assets/UserAnalysis.pdf" download="Group 2 User Analysis">Download PDF</a></th>
-        </tr>
-        <tr>
-          <th scope="col"><a href="assets/Storyboarding.pdf" target="_blank">Scenario and storyboard designs</a></th>
-          <th scope="col">10/14/23</th>
-          <th scope="col"><a href="assets/Storyboarding.pdf" download="Group 2 Storyboard">Download PDF</a></th>
-        </tr>
-        <tr>
-          <th scope="col">Paper prototyping and low-fidelity testing</th>
-          <th scope="col">To be uploaded</th>
-          <th scope="col"></th>
-        </tr>
-        <tr>
-          <th scope="col">Computer prototyping</th>
-          <th scope="col">To be uploaded</th>
-          <th scope="col"></th>
-        </tr>
-        <tr>
-          <th scope="col">Implementation and Demos</th>
-          <th scope="col">To be uploaded</th>
-          <th scope="col"></th>
-        </tr>
-      </tbody>
+      <thead class="col">
+    <label for="pdfSelect">Select PDF: </label>
+    <select id="pdfSelect" onchange="changePDF()">
+      <option value="1">Project Proposal</option>
+      <option value="2">User Analysis</option>
+      <option value="3">Storyboarding</option>
+    </select>
+  </thead>
+  <tr>
+    <iframe id="pdfFrame" width="800" height="500"></iframe>
+  </tr>
+    <script type="text/javascript">
+      function changePDF() {
+        const iframe = document.getElementById('pdfFrame');
+        const select = document.getElementById('pdfSelect');
+        const selectedValue = select.value;
+  
+        switch (selectedValue) {
+          case '1':
+            iframe.src = 'assets/Project Proposal.pdf';
+            break;
+  
+          case '2':
+            iframe.src = 'assets/UserAnalysis.pdf';
+            break;
+  
+          case '3':
+            iframe.src = 'assets/Storyboarding.pdf';
+            break;
+  
+          default:
+            break;
+        }
+      }
+  
+      // Initially load the first PDF
+      changePDF();
+    </script>
     </table>
-    </div>
-
+  </div>
 </body>
 </html>
 
