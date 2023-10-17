@@ -39,40 +39,36 @@
   </nav>
   <div class="bg-image"></div>
   <div class="bg-text">
-    <h5><label for="pdfSelect">Select PDF: </label>
+    <h5><label for="pdfSelect">Select Project Report: </label>
         <select id="pdfSelect" onchange="changePDF()">
-          <option value="1">Project Proposal</option>
-          <option value="2">User Analysis</option>
-          <option value="3">Storyboarding</option>
+          <option value="1">Project Step 3:Storyboarding</option>
+          <option value="2">Project Step 2:User Analysis</option>
+          <option value="3">Project Step 1:Project Proposal</option>
         </select></h5>
 
     <iframe id="pdfFrame" width="800" height="500"></iframe>
 
     <script type="text/javascript">
       function changePDF() {
-        const iframe = document.getElementById('pdfFrame');
-        const select = document.getElementById('pdfSelect');
-        const selectedValue = select.value;
-  
-        switch (selectedValue) {
-          case '1':
-            iframe.src = 'assets/Project Proposal.pdf';
-            break;
-  
-          case '2':
-            iframe.src = 'assets/UserAnalysis.pdf';
-            break;
-  
-          case '3':
-            iframe.src = 'assets/Storyboarding.pdf';
-            break;
-  
-          default:
-            break;
-        }
+    const iframe = document.getElementById('pdfFrame');
+    const select = document.getElementById('pdfSelect');
+    const selectedValue = select.value;
+
+    switch (selectedValue) {
+      case '1':
+        iframe.src = 'assets/Storyboarding.pdf';
+        
+        break;
+
+      case '2':
+        iframe.src = 'assets/UserAnalysis.pdf';
+        break;
+
+      case '3': 
+        iframe.src = 'assets/Project Proposal.pdf';
+        break;
+    }
       }
-  
-      // Initially load the first PDF
       changePDF();
     </script>
   </div>
